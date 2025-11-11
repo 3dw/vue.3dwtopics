@@ -69,6 +69,34 @@ export default defineComponent({
   <Navbar1 v-if="layout === 'default'" />
   <Navbar2 v-if="layout === 'dashboard'" ref="navbar2Ref" />
   <RouterView />
+  <!-- 樣稿 Ribbon -->
+  <div class="sample-ribbon">
+    <span>樣稿</span>
+  </div>
 </template>
 
 <style scoped></style>
+
+<style>
+/* 樣稿 Ribbon - 全局樣式 */
+.sample-ribbon {
+  position: fixed;
+  top: 10px;
+  right: -50px;
+  background-color: #ffd700;
+  color: #000;
+  padding: 8px 60px;
+  font-size: 22px;
+  font-weight: bold;
+  transform: rotate(45deg);
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  user-select: none;
+}
+
+.sample-ribbon span {
+  display: block;
+  white-space: nowrap;
+}
+</style>
