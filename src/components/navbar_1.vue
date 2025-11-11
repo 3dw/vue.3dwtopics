@@ -1,20 +1,21 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
   <div class="ui fixed inverted menu" style="background: rgba(26,26,26,0.95); backdrop-filter: blur(10px);">
     <div class="ui container">
-      <a href="#" class="header item">
+      <RouterLink to="/" class="header item">
         <i class="fist raised icon" style="color: #ffd700;"></i>
         <span style="color: #ffd700; font-weight: 600;">3dw 武林高手</span>
-      </a>
+      </RouterLink>
       <a href="#" class="item">學習路徑</a>
       <a href="#" class="item">關於我們</a>
       <div class="right menu">
-        <a href="https://onlinecourse.alearn.org.tw" target="_blank" class="ui positive button item start-practice-btn">
+        <RouterLink to="/dashboard" class="ui positive button item start-practice-btn">
           <i class="play icon"></i>
           開始修煉
-        </a>
+        </RouterLink>
       </div>
     </div>
   </div>

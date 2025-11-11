@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
+import { RouterLink } from 'vue-router'
 
 onMounted(() => {
   // 平滑滾動效果
@@ -45,10 +46,10 @@ onMounted(() => {
             </div>
 
             <div class="ui buttons">
-              <a href="https://onlinecourse.alearn.org.tw" target="_blank" class="ui large positive button">
+              <RouterLink to="/dashboard" class="ui large positive button">
                 <i class="play icon"></i>
                 開始修煉
-              </a>
+              </RouterLink>
               <button class="ui large primary button">探索高手</button>
               <button class="ui large secondary button">了解更多</button>
             </div>
@@ -239,7 +240,7 @@ onMounted(() => {
             <div class="extra content">
               <div class="ui two buttons">
                 <button class="ui basic button">查看詳情</button>
-                <a href="https://onlinecourse.alearn.org.tw" target="_blank" class="ui primary button">開始修煉</a>
+                <RouterLink to="/dashboard" class="ui primary button">開始修煉</RouterLink>
               </div>
             </div>
           </div>
@@ -261,7 +262,7 @@ onMounted(() => {
             <div class="extra content">
               <div class="ui two buttons">
                 <button class="ui basic button">查看詳情</button>
-                <a href="https://onlinecourse.alearn.org.tw" target="_blank" class="ui primary button">開始修煉</a>
+                <RouterLink to="/dashboard" class="ui primary button">開始修煉</RouterLink>
               </div>
             </div>
           </div>
@@ -283,7 +284,7 @@ onMounted(() => {
             <div class="extra content">
               <div class="ui two buttons">
                 <button class="ui basic button">查看詳情</button>
-                <a href="https://onlinecourse.alearn.org.tw" target="_blank" class="ui primary button">開始修煉</a>
+                <RouterLink to="/dashboard" class="ui primary button">開始修煉</RouterLink>
               </div>
             </div>
           </div>
@@ -318,7 +319,7 @@ onMounted(() => {
               <div class="extra content">
                 <div class="ui two buttons">
                   <button class="ui basic button">查看詳情</button>
-                  <a href="https://onlinecourse.alearn.org.tw" target="_blank" class="ui primary button">開始修煉</a>
+                  <RouterLink to="/dashboard" class="ui primary button">開始修煉</RouterLink>
                 </div>
               </div>
             </div>
@@ -344,7 +345,7 @@ onMounted(() => {
               <div class="extra content">
                 <div class="ui two buttons">
                   <button class="ui basic button">查看詳情</button>
-                  <a href="https://onlinecourse.alearn.org.tw" target="_blank" class="ui primary button">開始修煉</a>
+                  <RouterLink to="/dashboard" class="ui primary button">開始修煉</RouterLink>
                 </div>
               </div>
             </div>
@@ -370,7 +371,7 @@ onMounted(() => {
               <div class="extra content">
                 <div class="ui two buttons">
                   <button class="ui basic button">查看詳情</button>
-                  <a href="https://onlinecourse.alearn.org.tw" target="_blank" class="ui primary button">開始修煉</a>
+                  <RouterLink to="/dashboard" class="ui primary button">開始修煉</RouterLink>
                 </div>
               </div>
             </div>
@@ -399,7 +400,7 @@ onMounted(() => {
               <div class="extra content">
                 <div class="ui two buttons">
                   <button class="ui basic button">查看詳情</button>
-                  <a href="https://onlinecourse.alearn.org.tw" target="_blank" class="ui primary button">開始修煉</a>
+                  <RouterLink to="/dashboard" class="ui primary button">開始修煉</RouterLink>
                 </div>
               </div>
             </div>
@@ -425,7 +426,7 @@ onMounted(() => {
               <div class="extra content">
                 <div class="ui two buttons">
                   <button class="ui basic button">查看詳情</button>
-                  <a href="https://onlinecourse.alearn.org.tw" target="_blank" class="ui primary button">開始修煉</a>
+                  <RouterLink to="/dashboard" class="ui primary button">開始修煉</RouterLink>
                 </div>
               </div>
             </div>
@@ -451,7 +452,7 @@ onMounted(() => {
               <div class="extra content">
                 <div class="ui two buttons">
                   <button class="ui basic button">查看詳情</button>
-                  <a href="https://onlinecourse.alearn.org.tw" target="_blank" class="ui primary button">開始修煉</a>
+                  <RouterLink to="/dashboard" class="ui primary button">開始修煉</RouterLink>
                 </div>
               </div>
             </div>
