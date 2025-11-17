@@ -296,14 +296,14 @@ const startLearning = (courseId: number) => {
 }
 
 .hero-title {
-  font-size: 48px;
+  font-size: 58px; /* 從 48px 增加到 58px */
   font-weight: bold;
   margin-bottom: 16px;
   line-height: 1.2;
 }
 
 .hero-subtitle {
-  font-size: 20px;
+  font-size: 24px; /* 從 20px 增加到 24px */
   margin-bottom: 32px;
   opacity: 0.9;
   line-height: 1.5;
@@ -319,16 +319,16 @@ const startLearning = (courseId: number) => {
 .course-count {
   margin-top: 16px;
   color: #6b7280;
-  font-size: 14px;
+  font-size: 17px; /* 從 14px 增加到 17px */
 }
 
 /* Select 樣式 */
 select.ui.dropdown {
-  padding: 8px 12px;
+  padding: 10px 14px; /* 內邊距放大 */
   border: 1px solid #d4d4d5;
   border-radius: 4px;
   background-color: white;
-  font-size: 14px;
+  font-size: 17px; /* 從 14px 增加到 17px */
   color: #333;
   cursor: pointer;
   transition: border-color 0.2s;
@@ -380,7 +380,7 @@ select.ui.dropdown:focus {
 }
 
 .no-courses p {
-  font-size: 18px;
+  font-size: 22px; /* 從 18px 增加到 22px */
   margin-top: 16px;
 }
 
@@ -467,11 +467,11 @@ select.ui.dropdown:focus {
   }
 
   .hero-title {
-    font-size: 36px;
+    font-size: 44px; /* 從 36px 增加到 44px */
   }
 
   .hero-subtitle {
-    font-size: 18px;
+    font-size: 22px; /* 從 18px 增加到 22px */
   }
 }
 </style>

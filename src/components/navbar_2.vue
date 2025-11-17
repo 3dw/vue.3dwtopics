@@ -88,7 +88,7 @@ defineExpose({
 }
 
 .logo-text {
-  font-size: 24px;
+  font-size: 29px; /* 從 24px 增加到 29px */
   font-weight: bold;
   color: #1a1a1a;
 }
@@ -102,7 +102,7 @@ defineExpose({
 }
 
 .nav-title {
-  font-size: 14px;
+  font-size: 17px; /* 從 14px 增加到 17px */
   font-weight: 600;
   color: #6b7280;
   margin-bottom: 12px;

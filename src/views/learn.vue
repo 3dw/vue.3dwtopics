@@ -314,7 +314,7 @@ const goBack = () => {
 }
 
 .course-title {
-  font-size: 36px;
+  font-size: 44px; /* 從 36px 增加到 44px */
   font-weight: 700;
   color: #333;
   margin-bottom: 16px;
@@ -332,7 +332,7 @@ const goBack = () => {
   align-items: center;
   gap: 6px;
   color: #666;
-  font-size: 14px;
+  font-size: 17px; /* 從 14px 增加到 17px */
 }
 
 .meta-item i {
@@ -353,7 +353,7 @@ const goBack = () => {
 }
 
 .section-title {
-  font-size: 24px;
+  font-size: 29px; /* 從 24px 增加到 29px */
   font-weight: 600;
   color: #333;
   margin-bottom: 16px;
@@ -402,7 +402,7 @@ const goBack = () => {
 }
 
 .course-description {
-  font-size: 16px;
+  font-size: 19px; /* 從 16px 增加到 19px */
   line-height: 1.8;
   color: #555;
   margin: 0;
@@ -424,7 +424,7 @@ const goBack = () => {
   align-items: center;
   gap: 8px;
   margin-bottom: 16px;
-  font-size: 14px;
+  font-size: 17px; /* 從 14px 增加到 17px */
 }
 
 .info-item i {
@@ -461,13 +461,13 @@ const goBack = () => {
 }
 
 .no-course h2 {
-  font-size: 28px;
+  font-size: 34px; /* 從 28px 增加到 34px */
   color: #333;
   margin-bottom: 16px;
 }
 
 .no-course p {
-  font-size: 16px;
+  font-size: 19px; /* 從 16px 增加到 19px */
   color: #666;
   margin-bottom: 32px;
 }
@@ -527,7 +527,7 @@ const goBack = () => {
   }
 
   .course-title {
-    font-size: 24px;
+    font-size: 29px; /* 從 24px 增加到 29px */
   }
 
   .course-meta-info {

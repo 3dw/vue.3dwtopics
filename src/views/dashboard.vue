@@ -365,14 +365,14 @@ const purchaseCourse = (course: Course) => {
 }
 
 .welcome-title {
-  font-size: 32px;
+  font-size: 39px; /* 從 32px 增加到 39px */
   font-weight: 700;
   color: #333;
   margin-bottom: 8px;
 }
 
 .welcome-subtitle {
-  font-size: 18px;
+  font-size: 22px; /* 從 18px 增加到 22px */
   color: #666;
 }
 
@@ -403,14 +403,14 @@ const purchaseCourse = (course: Course) => {
 }
 
 .stat-number {
-  font-size: 24px;
+  font-size: 29px; /* 從 24px 增加到 29px */
   font-weight: 700;
   color: #333;
   margin-bottom: 4px;
 }
 
 .stat-label {
-  font-size: 14px;
+  font-size: 17px; /* 從 14px 增加到 17px */
   color: #666;
 }
 
@@ -431,7 +431,7 @@ const purchaseCourse = (course: Course) => {
 }
 
 .section-title {
-  font-size: 24px;
+  font-size: 29px; /* 從 24px 增加到 29px */
   font-weight: 600;
   color: #333;
   margin: 0;
@@ -521,13 +521,13 @@ const purchaseCourse = (course: Course) => {
 
 .course-category {
   color: #667eea;
-  font-size: 14px;
+  font-size: 17px; /* 從 14px 增加到 17px */
   font-weight: 500;
   margin-bottom: 8px;
 }
 
 .course-title {
-  font-size: 20px;
+  font-size: 24px; /* 從 20px 增加到 24px */
   font-weight: 600;
   color: #333;
   margin-bottom: 12px;
@@ -536,7 +536,7 @@ const purchaseCourse = (course: Course) => {
 
 .course-description {
   color: #666;
-  font-size: 14px;
+  font-size: 17px; /* 從 14px 增加到 17px */
   line-height: 1.5;
   margin-bottom: 16px;
 }
@@ -628,7 +628,7 @@ const purchaseCourse = (course: Course) => {
 }
 
 .achievement-title {
-  font-size: 18px;
+  font-size: 22px; /* 從 18px 增加到 22px */
   font-weight: 600;
   color: #333;
   margin-bottom: 8px;
@@ -636,7 +636,7 @@ const purchaseCourse = (course: Course) => {
 
 .achievement-description {
   color: #666;
-  font-size: 14px;
+  font-size: 17px; /* 從 14px 增加到 17px */
   line-height: 1.5;
   margin-bottom: 16px;
 }
@@ -723,11 +723,11 @@ const purchaseCourse = (course: Course) => {
   }
 
   .welcome-title {
-    font-size: 24px;
+    font-size: 29px; /* 從 24px 增加到 29px */
   }
 
   .welcome-subtitle {
-    font-size: 16px;
+    font-size: 19px; /* 從 16px 增加到 19px */
   }
 
   .section {

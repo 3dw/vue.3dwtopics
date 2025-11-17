@@ -2,9 +2,55 @@
 
 body {
   font-family: 'Noto Serif TC', serif;
+  font-size: 18px; /* 基礎字體大小從 15px 增加到 18px */
 }
 
 #app {
   margin: 0 auto;
   font-weight: normal;
+  font-size: 1.2em; /* 整體放大 20% */
+}
+
+/* 標題字體放大 */
+h1 {
+  font-size: 2.4em !important; /* 原本約 2em，放大到 2.4em */
+}
+
+h2 {
+  font-size: 2em !important; /* 原本約 1.75em，放大到 2em */
+}
+
+h3 {
+  font-size: 1.6em !important; /* 原本約 1.5em，放大到 1.6em */
+}
+
+h4 {
+  font-size: 1.4em !important; /* 原本約 1.25em，放大到 1.4em */
+}
+
+/* 段落和文字內容放大 */
+p, .description, .meta {
+  font-size: 1.15em !important; /* 文字內容放大 15% */
+}
+
+/* 按鈕文字放大 */
+button, .ui.button, a.button, .ui.button {
+  font-size: 1.1em !important; /* 按鈕文字放大 10% */
+  padding: 0.95em 1.8em !important; /* 按鈕內邊距也相應放大 */
+}
+
+/* 輸入框文字放大 */
+input, textarea, select, .ui.input input {
+  font-size: 1.1em !important; /* 輸入框文字放大 10% */
+  padding: 0.8em 1em !important; /* 輸入框內邊距放大 */
+}
+
+/* 列表文字放大 */
+li, .ui.list .item {
+  font-size: 1.1em !important;
+}
+
+/* 表格文字放大 */
+td, th {
+  font-size: 1.1em !important;
 }

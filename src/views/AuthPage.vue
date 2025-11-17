@@ -258,7 +258,7 @@ const handleSubmit = async (e: Event) => {
 }
 
 .auth-title {
-  font-size: 28px;
+  font-size: 34px; /* 從 28px 增加到 34px */
   font-weight: 600;
   color: #333;
   margin-bottom: 8px;
@@ -266,13 +266,13 @@ const handleSubmit = async (e: Event) => {
 
 .auth-subtitle {
   color: #666;
-  font-size: 16px;
+  font-size: 19px; /* 從 16px 增加到 19px */
   margin-bottom: 4px;
 }
 
 .auth-subtitle-small {
   color: #888;
-  font-size: 14px;
+  font-size: 17px; /* 從 14px 增加到 17px */
 }
 
 .google-login-section {
@@ -281,8 +281,8 @@ const handleSubmit = async (e: Event) => {
 
 .google-btn {
   width: 100%;
-  height: 48px;
-  font-size: 16px;
+  height: 56px; /* 從 48px 增加到 56px */
+  font-size: 19px; /* 從 16px 增加到 19px */
   font-weight: 500;
   border: 1px solid #ddd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -335,8 +335,8 @@ const handleSubmit = async (e: Event) => {
 
 .submit-btn {
   width: 100%;
-  height: 48px;
-  font-size: 16px;
+  height: 56px; /* 從 48px 增加到 56px */
+  font-size: 19px; /* 從 16px 增加到 19px */
   font-weight: 500;
   margin-top: 10px;
 }

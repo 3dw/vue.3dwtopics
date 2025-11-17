@@ -539,8 +539,9 @@ onMounted(() => {
   z-index: 2;
 }
 
+
 .martial-arts-title {
-  font-size: 3rem;
+  font-size: 3.6rem; /* 從 3rem 增加到 3.6rem */
   font-weight: 700;
   color: white;
   margin-bottom: 1.5rem;
@@ -549,7 +550,7 @@ onMounted(() => {
 }
 
 .wisdom-quote {
-  font-size: 1.1rem;
+  font-size: 1.3rem; /* 從 1.1rem 增加到 1.3rem */
   font-style: italic;
   color: rgba(255, 255, 255, 0.95);
   margin: 2rem 0;
@@ -623,14 +624,14 @@ onMounted(() => {
 .step-number {
   background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
   color: white;
-  width: 48px;
-  height: 48px;
+  width: 56px; /* 從 48px 增加到 56px */
+  height: 56px; /* 從 48px 增加到 56px */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.4rem; /* 從 1.2rem 增加到 1.4rem */
   margin-bottom: 1rem;
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
@@ -686,7 +687,7 @@ onMounted(() => {
 }
 
 .martial-arts-icon {
-  font-size: 3rem;
+  font-size: 3.6rem; /* 從 3rem 增加到 3.6rem */
   color: #fbbf24;
   margin-bottom: 1rem;
 }
@@ -717,41 +718,77 @@ onMounted(() => {
   color: #1e293b;
   font-weight: 600;
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* 從 1.5rem 增加到 1.8rem */
 }
 
 /* 按鈕樣式優化 - 政府網站風格 */
+.hero-section .ui.buttons {
+  margin-top: 2.5rem !important; /* 確保按鈕有足夠的上邊距 */
+  margin-bottom: 1rem !important;
+  display: flex !important;
+  gap: 1rem !important;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10; /* 確保按鈕在上層 */
+}
+
 .hero-section .ui.button {
-  font-weight: 600;
-  padding: 0.9rem 2rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  font-weight: 600 !important;
+  padding: 1.1rem 2.4rem !important; /* 增加內邊距，確保按鈕更大更明顯 */
+  border-radius: 8px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important; /* 增強陰影，讓按鈕更突出 */
+  transition: all 0.3s ease !important;
+  font-size: 1.25rem !important; /* 確保字體大小 */
+  color: white !important; /* 確保文字是白色 */
+  border: 2px solid transparent !important;
+  position: relative;
+  z-index: 10; /* 確保按鈕在上層 */
+  min-height: 50px; /* 確保按鈕有最小高度 */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .hero-section .ui.button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35) !important; /* 懸停時更明顯的陰影 */
 }
 
 .hero-section .ui.positive.button {
-  background: #10b981;
-  border-color: #10b981;
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+  color: white !important;
 }
 
 .hero-section .ui.positive.button:hover {
-  background: #059669;
-  border-color: #059669;
+  background: #059669 !important;
+  border-color: #059669 !important;
+  color: white !important;
 }
 
 .hero-section .ui.primary.button {
-  background: #3b82f6;
-  border-color: #3b82f6;
+  background: #3b82f6 !important;
+  border-color: #3b82f6 !important;
+  color: white !important;
 }
 
 .hero-section .ui.primary.button:hover {
-  background: #2563eb;
-  border-color: #2563eb;
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: white !important;
+}
+
+.hero-section .ui.secondary.button {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  color: white !important;
+  backdrop-filter: blur(10px);
+}
+
+.hero-section .ui.secondary.button:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  color: white !important;
 }
 
 /* 手機版樣式調整 */
@@ -764,7 +801,7 @@ onMounted(() => {
   }
 
   .martial-arts-title {
-    font-size: 2.2rem;
+    font-size: 2.6rem; /* 從 2.2rem 增加到 2.6rem */
     margin-top: 0;
   }
 

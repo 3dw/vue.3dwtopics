@@ -29,8 +29,8 @@ import { RouterLink } from 'vue-router'
   box-shadow: 0 4px 15px rgba(33, 186, 69, 0.4), 0 0 20px rgba(255, 215, 0, 0.3) !important;
   color: white !important;
   font-weight: 700 !important;
-  font-size: 1.1rem !important;
-  padding: 0.8rem 1.5rem !important;
+  font-size: 1.3rem !important; /* 從 1.1rem 增加到 1.3rem */
+  padding: 0.95rem 1.8rem !important; /* 內邊距也放大 */
   border-radius: 25px !important;
   transition: all 0.3s ease !important;
   position: relative !important;
@@ -87,13 +87,13 @@ import { RouterLink } from 'vue-router'
   
   .ui.fixed.inverted.menu .item {
     padding: 0.8rem 1rem;
-    font-size: 1rem;
+    font-size: 1.2rem; /* 從 1rem 增加到 1.2rem */
   }
   
   /* 手機版按鈕調整 */
   .start-practice-btn {
-    font-size: 1rem !important;
-    padding: 0.7rem 1.2rem !important;
+    font-size: 1.2rem !important; /* 從 1rem 增加到 1.2rem */
+    padding: 0.85rem 1.5rem !important; /* 內邊距放大 */
     border-radius: 20px !important;
   }
 }
