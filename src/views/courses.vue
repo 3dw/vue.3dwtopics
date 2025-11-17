@@ -1,30 +1,63 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { ref, inject, computed } from 'vue'
-import { courses } from '../data/courses'
+import { ref, inject, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { fetchCourses, type Course } from '../services/api'
+// 保留靜態數據作為後備方案
+import { courses as staticCourses } from '../data/courses'
 
 const router = useRouter()
 
+// 課程數據
+const courses = ref<Course[]>([])
+const loading = ref(false)
+const error = ref<string | null>(null)
+
+// 搜尋和篩選
 const searchText = ref('')
 const categoryFilter = ref('全部')
 const difficultyFilter = ref('全部')
 
+// 從 API 獲取課程數據
+const loadCourses = async () => {
+  loading.value = true
+  error.value = null
+  
+  try {
+    // 嘗試從 API 獲取數據
+    courses.value = await fetchCourses()
+  } catch (err) {
+    console.error('Failed to load courses from API, using static data:', err)
+    // 如果 API 失敗，使用靜態數據作為後備
+    courses.value = staticCourses as Course[]
+    error.value = '無法連接到伺服器，顯示本地數據'
+  } finally {
+    loading.value = false
+  }
+}
+
+// 組件掛載時載入數據
+onMounted(() => {
+  loadCourses()
+})
+
 // 從 courses 數據中動態獲取分類
 const categories = computed(() => {
-  const cats = new Set(courses.map(course => course.category))
+  if (courses.value.length === 0) return ['全部']
+  const cats = new Set(courses.value.map(course => course.category))
   return ['全部', ...Array.from(cats)]
 })
 
 // 從 courses 數據中動態獲取難度等級
 const difficulties = computed(() => {
-  const levels = new Set(courses.map(course => course.level))
+  if (courses.value.length === 0) return ['全部']
+  const levels = new Set(courses.value.map(course => course.level))
   return ['全部', ...Array.from(levels)]
 })
 
 // 過濾課程
 const filteredCourses = computed(() => {
-  return courses.filter(course => {
+  return courses.value.filter(course => {
     // 搜尋過濾
     const matchesSearch = !searchText.value ||
       course.title.toLowerCase().includes(searchText.value.toLowerCase()) ||
@@ -128,11 +161,25 @@ const startLearning = (courseId: number) => {
         <!-- Course Cards Section -->
         <div class="courses-section">
           <div class="ui container">
-            <div v-if="filteredCourses.length === 0" class="no-courses">
+            <!-- 載入中狀態 -->
+            <div v-if="loading" class="loading-section">
+              <div class="ui active centered inline loader"></div>
+              <p style="text-align: center; margin-top: 1rem; color: #666;">載入課程中...</p>
+            </div>
+            
+            <!-- 錯誤訊息 -->
+            <div v-else-if="error" class="ui warning message">
+              <i class="warning icon"></i>
+              {{ error }}
+            </div>
+            
+            <!-- 沒有找到課程 -->
+            <div v-else-if="!loading && filteredCourses.length === 0" class="no-courses">
               <i class="huge search icon"></i>
               <p>沒有找到符合條件的課程</p>
             </div>
-            <div v-else class="ui three column stackable grid">
+            <!-- 課程列表 -->
+            <div v-else-if="!loading && filteredCourses.length > 0" class="ui three column stackable grid">
               <div class="column" v-for="course in filteredCourses" :key="course.id">
                 <div class="ui card course-card">
                   <div class="image">
@@ -335,6 +382,12 @@ select.ui.dropdown:focus {
 .no-courses p {
   font-size: 18px;
   margin-top: 16px;
+}
+
+/* 載入中樣式 */
+.loading-section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .course-price {

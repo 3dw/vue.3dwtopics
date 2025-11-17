@@ -2,7 +2,9 @@
 <script setup lang="ts">
 import { ref, computed, inject, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { courses } from '../data/courses'
+import { fetchCourseById, type Course } from '../services/api'
+// 保留靜態數據作為後備方案
+import { courses as staticCourses } from '../data/courses'
 
 const route = useRoute()
 const router = useRouter()
@@ -17,16 +19,40 @@ const courseId = computed(() => {
   return typeof id === 'string' ? parseInt(id, 10) : Number(id)
 })
 
-// 查找課程
-const course = computed(() => {
-  return courses.find(c => c.id === courseId.value)
-})
+// 課程數據
+const course = ref<Course | null>(null)
+const loading = ref(false)
+const error = ref<string | null>(null)
 
-// 如果找不到課程，返回上一頁
-onMounted(() => {
-  if (!course.value) {
-    router.push('/courses')
+// 從 API 獲取課程數據
+const loadCourse = async () => {
+  loading.value = true
+  error.value = null
+  
+  try {
+    // 嘗試從 API 獲取數據
+    course.value = await fetchCourseById(courseId.value)
+  } catch (err) {
+    console.error('Failed to load course from API, using static data:', err)
+    // 如果 API 失敗，使用靜態數據作為後備
+    const staticCourse = staticCourses.find(c => c.id === courseId.value)
+    if (staticCourse) {
+      course.value = staticCourse as Course
+    } else {
+      error.value = '找不到此課程'
+    }
+  } finally {
+    loading.value = false
   }
+}
+
+// 組件掛載時載入數據
+onMounted(() => {
+  if (!courseId.value || isNaN(courseId.value)) {
+    router.push('/courses')
+    return
+  }
+  loadCourse()
 })
 
 // 返回課程列表
@@ -58,7 +84,29 @@ const goBack = () => {
       </div>
 
       <!-- 主要內容 -->
-      <div class="content-wrapper" v-if="course">
+      <!-- 載入中狀態 -->
+      <div class="content-wrapper" v-if="loading">
+        <div class="ui container">
+          <div class="loading-section">
+            <div class="ui active centered inline loader"></div>
+            <p style="text-align: center; margin-top: 1rem; color: #666;">載入課程中...</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 錯誤狀態 -->
+      <div class="content-wrapper" v-else-if="error">
+        <div class="ui container">
+          <div class="no-course">
+            <i class="huge exclamation triangle icon"></i>
+            <h2>{{ error }}</h2>
+            <button class="ui primary button" @click="router.push('/courses')">返回課程列表</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 課程內容 -->
+      <div class="content-wrapper" v-else-if="course">
         <div class="ui container">
           <!-- 返回按鈕 -->
           <div class="back-button-section">
