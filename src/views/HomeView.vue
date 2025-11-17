@@ -40,7 +40,7 @@ onMounted(() => {
             <div class="wisdom-quote">
               "當我看著眼前一小塊土地，看到植物以及...<br>
               萬物皆有靈 vs. 人在期間的自我節律"
-              <div style="text-align: right; margin-top: 1rem; font-size: 0.9rem; color: #ffd700;">
+              <div style="text-align: right; margin-top: 1rem; font-size: 0.9rem; color: #fbbf24;">
                 — 思琴
               </div>
             </div>
@@ -67,7 +67,7 @@ onMounted(() => {
         </div>
 
         <div class="scroll-indicator">
-          <i class="chevron down icon" style="color: #ffd700; font-size: 2rem;"></i>
+          <i class="chevron down icon" style="color: rgba(255,255,255,0.9); font-size: 2rem;"></i>
         </div>
       </div>
     </div>
@@ -75,8 +75,8 @@ onMounted(() => {
     <!-- 武林高手介紹 -->
     <div class="master-section">
       <div class="ui container">
-        <h2 class="ui center aligned header" style="color: white; font-size: 2.5rem; margin-bottom: 3rem;">
-          <i class="fist raised icon" style="color: #ffd700;"></i>
+        <h2 class="ui center aligned header" style="color: #1e293b; font-size: 2.5rem; margin-bottom: 3rem;">
+          <i class="fist raised icon" style="color: #3b82f6;"></i>
           武林高手風采
         </h2>
 
@@ -86,15 +86,15 @@ onMounted(() => {
               <div class="master-avatar">
                 <i class="leaf icon"></i>
               </div>
-              <h3 class="ui center aligned header" style="color: #ffd700;">思琴</h3>
-              <p style="color: rgba(255,255,255,0.9); line-height: 1.6;">
+              <h3 class="ui center aligned header" style="color: #1e40af;">思琴</h3>
+              <p style="color: #475569; line-height: 1.6;">
                 專精於生態觀察與自主學習哲學。透過對小塊土地的深度觀察，
                 探索區域生態到植物群落的奧秘，理解入侵種在期間的意義，
                 培養生態倫理與自我節律的平衡。
               </p>
-              <div class="ui divider" style="background-color: rgba(255,255,255,0.2);"></div>
-              <h4 style="color: #ffd700; margin-top: 1rem;">修煉心法：</h4>
-              <ul style="color: rgba(255,255,255,0.8);">
+              <div class="ui divider" style="background-color: #e2e8f0;"></div>
+              <h4 style="color: #3b82f6; margin-top: 1rem;">修煉心法：</h4>
+              <ul style="color: #64748b;">
                 <li>辨識與標註的藝術</li>
                 <li>採集前後的思考原則</li>
                 <li>萬物皆有靈的哲學</li>
@@ -108,15 +108,15 @@ onMounted(() => {
               <div class="master-avatar">
                 <i class="tree icon"></i>
               </div>
-              <h3 class="ui center aligned header" style="color: #ffd700;">Friday</h3>
-              <p style="color: rgba(255,255,255,0.9); line-height: 1.6;">
+              <h3 class="ui center aligned header" style="color: #1e40af;">Friday</h3>
+              <p style="color: #475569; line-height: 1.6;">
                 野外可食植物辨識的專家，傳授安全採集原則與生態倫理觀念。
                 教導學習者如何在小塊土地上觀察植物群落與生態系統，
                 建立人與自然的和諧關係。
               </p>
-              <div class="ui divider" style="background-color: rgba(255,255,255,0.2);"></div>
-              <h4 style="color: #ffd700; margin-top: 1rem;">修煉心法：</h4>
-              <ul style="color: rgba(255,255,255,0.8);">
+              <div class="ui divider" style="background-color: #e2e8f0;"></div>
+              <h4 style="color: #3b82f6; margin-top: 1rem;">修煉心法：</h4>
+              <ul style="color: #64748b;">
                 <li>植物辨識的基礎</li>
                 <li>安全採集的原則</li>
                 <li>生態倫理的實踐</li>
@@ -131,8 +131,8 @@ onMounted(() => {
     <!-- 修煉路徑 -->
     <div class="learning-path">
       <div class="ui container">
-        <h2 class="ui center aligned header" style="font-size: 2.5rem; margin-bottom: 3rem;">
-          <i class="route icon" style="color: #28a745;"></i>
+        <h2 class="ui center aligned header" style="font-size: 2.5rem; margin-bottom: 3rem; color: #1e293b;">
+          <i class="route icon" style="color: #3b82f6;"></i>
           修煉路徑
         </h2>
 
@@ -182,8 +182,8 @@ onMounted(() => {
     <!-- 哲學思考 -->
     <div class="philosophy-section">
       <div class="ui container">
-        <h2 class="ui center aligned header" style="font-size: 2.5rem; margin-bottom: 3rem;">
-          <i class="lightbulb icon" style="color: #ffd700;"></i>
+        <h2 class="ui center aligned header" style="font-size: 2.5rem; margin-bottom: 3rem; color: #1e293b;">
+          <i class="lightbulb icon" style="color: #3b82f6;"></i>
           修煉哲學
         </h2>
 
@@ -191,7 +191,7 @@ onMounted(() => {
           <div class="column">
             <div class="philosophy-card">
               <h3 class="philosophy-title">
-                <i class="leaf icon" style="color: #28a745;"></i>
+                <i class="leaf icon" style="color: #3b82f6;"></i>
                 萬物皆有靈
               </h3>
               <p style="line-height: 1.6;">
@@ -204,7 +204,7 @@ onMounted(() => {
           <div class="column">
             <div class="philosophy-card">
               <h3 class="philosophy-title">
-                <i class="heart icon" style="color: #e74c3c;"></i>
+                <i class="heart icon" style="color: #3b82f6;"></i>
                 自我節律
               </h3>
               <p style="line-height: 1.6;">
@@ -219,8 +219,8 @@ onMounted(() => {
 
     <!-- 修煉主題 -->
     <div class="ui container" style="padding: 80px 0;">
-      <h2 class="ui center aligned header" style="font-size: 2.5rem; margin-bottom: 3rem;">
-        <i class="star icon" style="color: #ffd700;"></i>
+      <h2 class="ui center aligned header" style="font-size: 2.5rem; margin-bottom: 3rem; color: #1e293b;">
+        <i class="star icon" style="color: #3b82f6;"></i>
         修煉主題
       </h2>
       <div class="ui three column stackable grid">
@@ -293,8 +293,8 @@ onMounted(() => {
 
       <!-- 其他修煉主題 -->
       <div class="ui container" style="padding: 60px 0;">
-        <h2 class="ui center aligned header" style="font-size: 2.5rem; margin-bottom: 3rem;">
-          <i class="book icon" style="color: #ffd700;"></i>
+        <h2 class="ui center aligned header" style="font-size: 2.5rem; margin-bottom: 3rem; color: #1e293b;">
+          <i class="book icon" style="color: #3b82f6;"></i>
           其他修煉主題
         </h2>
         <div class="ui three column stackable grid">
@@ -466,15 +466,15 @@ onMounted(() => {
       <div class="ui container">
         <div class="ui four column stackable grid">
           <div class="column">
-            <h4 class="ui header" style="color: #ffd700;">關於 3dw 武林高手</h4>
-            <p style="color: rgba(255,255,255,0.8);">
+            <h4 class="ui header" style="color: #fbbf24;">關於 3dw 武林高手</h4>
+            <p style="color: rgba(255,255,255,0.9);">
               致力於推廣自主學習，透過個人自主提案與實作，建立人與萬事萬物和諧關係。
               我們有很多武林高手，也會陸續發覺很多武林高手。
             </p>
           </div>
           <div class="column">
-            <h4 class="ui header" style="color: #ffd700;">修煉資源</h4>
-            <div class="ui list" style="color: rgba(255,255,255,0.8);">
+            <h4 class="ui header" style="color: #fbbf24;">修煉資源</h4>
+            <div class="ui list" style="color: rgba(255,255,255,0.9);">
               <div class="item">修煉目錄</div>
               <div class="item">修煉指南</div>
               <div class="item">FAQ</div>
@@ -482,8 +482,8 @@ onMounted(() => {
             </div>
           </div>
           <div class="column">
-            <h4 class="ui header" style="color: #ffd700;">武林社群</h4>
-            <div class="ui list" style="color: rgba(255,255,255,0.8);">
+            <h4 class="ui header" style="color: #fbbf24;">武林社群</h4>
+            <div class="ui list" style="color: rgba(255,255,255,0.9);">
               <div class="item">討論區</div>
               <div class="item">修煉群組</div>
               <div class="item">活動資訊</div>
@@ -491,8 +491,8 @@ onMounted(() => {
             </div>
           </div>
           <div class="column">
-            <h4 class="ui header" style="color: #ffd700;">武林語錄</h4>
-            <p style="color: rgba(255,255,255,0.8); font-style: italic;">
+            <h4 class="ui header" style="color: #fbbf24;">武林語錄</h4>
+            <p style="color: rgba(255,255,255,0.9); font-style: italic;">
               "當我看著眼前一小塊土地，看到植物以及...<br>
               萬物皆有靈 vs. 人在期間的自我節律"
             </p>
@@ -508,10 +508,11 @@ onMounted(() => {
 </template>
 
 <style scoped>
+/* 政府網站風格：簡潔、專業、清晰 */
 .hero-section {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%);
   color: white;
-  padding: 120px 0 80px;
+  padding: 100px 0 60px;
   position: relative;
   overflow: hidden;
 }
@@ -523,8 +524,14 @@ onMounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  opacity: 0.3;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.03) 10px,
+    rgba(255, 255, 255, 0.03) 20px
+  );
+  opacity: 0.5;
 }
 
 .hero-content {
@@ -533,116 +540,128 @@ onMounted(() => {
 }
 
 .martial-arts-title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 1rem;
-  background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .wisdom-quote {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-style: italic;
-  color: #e0e0e0;
+  color: rgba(255, 255, 255, 0.95);
   margin: 2rem 0;
-  padding: 2rem;
-  border-left: 4px solid #ffd700;
-  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-left: 4px solid #fbbf24;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 0 8px 8px 0;
+  backdrop-filter: blur(10px);
 }
 
 .master-section {
-  background: linear-gradient(135deg, #2c5530 0%, #1a3d1f 100%);
-  color: white;
+  background: #f8fafc;
+  color: #1e293b;
   padding: 80px 0;
+  border-top: 4px solid #3b82f6;
 }
 
 .master-card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
   padding: 2rem;
   margin: 1rem 0;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 .master-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
 }
 
 .master-avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
   font-size: 2rem;
-  color: #1a1a1a;
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .learning-path {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: white;
   padding: 80px 0;
+  border-top: 1px solid #e2e8f0;
 }
 
 .path-step {
-  background: white;
-  border-radius: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
   padding: 2rem;
   margin: 1rem 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #28a745;
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 2px solid #e2e8f0;
+  border-left: 4px solid #3b82f6;
+  transition: all 0.3s ease;
 }
 
 .path-step:hover {
-  transform: translateX(10px);
+  transform: translateX(5px);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.12);
+  border-color: #3b82f6;
 }
 
 .step-number {
-  background: linear-gradient(45deg, #28a745, #20c997);
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
   color: white;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .topic-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
-  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .topic-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
 }
 
 .topic-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
   color: white;
   padding: 1.5rem;
   text-align: center;
+  font-weight: 600;
 }
 
 .footer {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: #1e293b;
   color: white;
   padding: 60px 0 40px;
+  border-top: 4px solid #3b82f6;
 }
 
 .scroll-indicator {
@@ -651,22 +670,16 @@ onMounted(() => {
   left: 50%;
   transform: translateX(-50%);
   animation: bounce 2s infinite;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 @keyframes bounce {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
+  0%, 20%, 50%, 80%, 100% {
     transform: translateX(-50%) translateY(0);
   }
-
   40% {
     transform: translateX(-50%) translateY(-10px);
   }
-
   60% {
     transform: translateX(-50%) translateY(-5px);
   }
@@ -674,28 +687,71 @@ onMounted(() => {
 
 .martial-arts-icon {
   font-size: 3rem;
-  color: #ffd700;
+  color: #fbbf24;
   margin-bottom: 1rem;
 }
 
 .philosophy-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #f8fafc;
   padding: 80px 0;
+  border-top: 1px solid #e2e8f0;
 }
 
 .philosophy-card {
   background: white;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 2rem;
   margin: 1rem 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-top: 4px solid #ffd700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 2px solid #e2e8f0;
+  border-top: 4px solid #3b82f6;
+  transition: all 0.3s ease;
+}
+
+.philosophy-card:hover {
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.12);
+  border-color: #3b82f6;
 }
 
 .philosophy-title {
-  color: #2c5530;
+  color: #1e293b;
   font-weight: 600;
   margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* 按鈕樣式優化 - 政府網站風格 */
+.hero-section .ui.button {
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.hero-section .ui.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section .ui.positive.button {
+  background: #10b981;
+  border-color: #10b981;
+}
+
+.hero-section .ui.positive.button:hover {
+  background: #059669;
+  border-color: #059669;
+}
+
+.hero-section .ui.primary.button {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.hero-section .ui.primary.button:hover {
+  background: #2563eb;
+  border-color: #2563eb;
 }
 
 /* 手機版樣式調整 */
@@ -710,6 +766,11 @@ onMounted(() => {
   .martial-arts-title {
     font-size: 2.2rem;
     margin-top: 0;
+  }
+
+  .hero-section .ui.button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
 </style>
