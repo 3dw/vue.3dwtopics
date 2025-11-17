@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref, onUnmounted, computed } from 'vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
+
+const router = useRouter()
 
 // 金句輪播數據
 const quotes = [
@@ -49,6 +51,18 @@ const stopCarousel = () => {
   if (carouselInterval) {
     clearInterval(carouselInterval)
     carouselInterval = null
+  }
+}
+
+// 處理金句點擊跳轉
+const handleQuoteClick = () => {
+  const author = currentQuote.value?.author
+  if (author === 'Friday') {
+    // Friday 的金句跳轉到首頁（當前頁面，可以滾動到頂部）
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  } else if (author === 'Bestian Tang（小巴老師）' || author === '朱佳仁') {
+    // 小巴老師和朱佳仁的金句跳轉到自由數學頁面
+    router.push('/freemath')
   }
 }
 
@@ -103,7 +117,8 @@ onUnmounted(() => {
                     v-if="currentQuote" 
                     :key="currentQuoteIndex" 
                     class="wisdom-quote"
-                    :style="{ borderLeftColor: currentQuote.color }">
+                    :style="{ borderLeftColor: currentQuote.color }"
+                    @click="handleQuoteClick">
                     <div v-html="currentQuote.text" class="quote-text"></div>
                     <div 
                       :style="{ textAlign: 'right', marginTop: '1rem', fontSize: '0.9rem', color: currentQuote.color }"
@@ -691,12 +706,19 @@ onUnmounted(() => {
   font-style: italic;
   color: rgba(255, 255, 255, 0.95);
   padding: 1.5rem;
+  padding-right: 3.5rem; /* 增加右邊距，避免名字被箭頭遮擋 */
   border-left: 4px solid;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 0 8px 8px 0;
   backdrop-filter: blur(10px);
   position: relative;
-  transition: border-left-color 0.5s ease;
+  transition: border-left-color 0.5s ease, transform 0.2s ease, cursor 0.2s ease;
+  cursor: pointer;
+}
+
+.wisdom-quote:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .quote-text {
@@ -706,6 +728,8 @@ onUnmounted(() => {
 .quote-author {
   font-weight: 600;
   transition: color 0.3s ease;
+  padding-right: 0; /* 確保名字有足夠空間 */
+  margin-right: 0;
 }
 
 /* 輪播過渡動畫 */
