@@ -37,6 +37,11 @@ const router = createRouter({
       name: 'learn',
       component: () => import('../views/learn.vue'),
     },
+    {
+      path: '/freemath',
+      name: 'freemath',
+      component: () => import('../views/FreemathView.vue'),
+    },
   ],
 })
 

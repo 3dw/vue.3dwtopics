@@ -9,7 +9,11 @@ import { RouterLink } from 'vue-router'
         <i class="fist raised icon" style="color: #ffd700;"></i>
         <span style="color: #ffd700; font-weight: 600;">3dw 武林高手</span>
       </RouterLink>
-      <a href="#" class="item">學習路徑</a>
+      <RouterLink to="/courses" class="item">課程列表</RouterLink>
+      <RouterLink to="/freemath" class="item">
+        <i class="calculator icon"></i>
+        自由數學
+      </RouterLink>
       <a href="#" class="item">關於我們</a>
       <div class="right menu">
         <RouterLink to="/dashboard" class="ui positive button item start-practice-btn">

@@ -1,6 +1,56 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref, onUnmounted, computed } from 'vue'
 import { RouterLink } from 'vue-router'
+
+// 金句輪播數據
+const quotes = [
+  {
+    text: '"數學不是計算，而是思考的方式<br>透過數學，我們可以理解世界的規律與美感"',
+    author: 'bestian Tang（小巴老師）',
+    color: '#f5576c'
+  },
+  {
+    text: '"當我看著眼前一小塊土地，看到植物以及...<br>萬物皆有靈 vs. 人在期間的自我節律"',
+    author: 'Friday',
+    color: '#fbbf24'
+  },
+  {
+    text: '"教材不是萬能，但沒教材萬萬不能<br>讓學生能真正從教材中學習，而非只是做題目"',
+    author: '朱佳仁',
+    color: '#667eea'
+  }
+] as const
+
+const currentQuoteIndex = ref(0) // 從 bestian Tang（小巴老師）開始
+let carouselInterval: number | null = null
+
+// 當前金句
+const currentQuote = computed(() => quotes[currentQuoteIndex.value])
+
+// 切換到下一句
+const nextQuote = () => {
+  currentQuoteIndex.value = (currentQuoteIndex.value + 1) % quotes.length
+}
+
+// 切換到指定索引
+const goToQuote = (index: number) => {
+  currentQuoteIndex.value = index
+}
+
+// 啟動自動輪播
+const startCarousel = () => {
+  carouselInterval = window.setInterval(() => {
+    nextQuote()
+  }, 3000) // 每3秒切換一次
+}
+
+// 停止自動輪播
+const stopCarousel = () => {
+  if (carouselInterval) {
+    clearInterval(carouselInterval)
+    carouselInterval = null
+  }
+}
 
 onMounted(() => {
   // 平滑滾動效果
@@ -17,6 +67,14 @@ onMounted(() => {
       }
     })
   })
+  
+  // 啟動輪播
+  startCarousel()
+})
+
+onUnmounted(() => {
+  // 清理定時器
+  stopCarousel()
 })
 </script>
 
@@ -37,12 +95,44 @@ onMounted(() => {
               「自主學習促進會」中，聚集了許多來自各方的武林高手，也將會陸續發現更多潛藏的高手。
             </p>
 
-            <div class="wisdom-quote">
-              "當我看著眼前一小塊土地，看到植物以及...<br>
-              萬物皆有靈 vs. 人在期間的自我節律"
-              <div style="text-align: right; margin-top: 1rem; font-size: 0.9rem; color: #fbbf24;">
-                — 思琴
+            <!-- 金句輪播 -->
+            <div class="quote-carousel" @mouseenter="stopCarousel" @mouseleave="startCarousel">
+              <div class="quote-container">
+                <transition name="fade" mode="out-in">
+                  <div 
+                    v-if="currentQuote" 
+                    :key="currentQuoteIndex" 
+                    class="wisdom-quote"
+                    :style="{ borderLeftColor: currentQuote.color }">
+                    <div v-html="currentQuote.text" class="quote-text"></div>
+                    <div 
+                      :style="{ textAlign: 'right', marginTop: '1rem', fontSize: '0.9rem', color: currentQuote.color }"
+                      class="quote-author">
+                      — {{ currentQuote.author }}
+                    </div>
+                  </div>
+                </transition>
               </div>
+              
+              <!-- 輪播指示器 -->
+              <div class="carousel-indicators">
+                <button
+                  v-for="(quote, index) in quotes"
+                  :key="index"
+                  :class="['indicator', { active: currentQuoteIndex === index }]"
+                  :style="{ backgroundColor: currentQuoteIndex === index ? quote.color : 'rgba(255,255,255,0.3)' }"
+                  @click="goToQuote(index)"
+                  :aria-label="`切換到${quote.author}的金句`"
+                ></button>
+              </div>
+              
+              <!-- 左右切換按鈕 -->
+              <button class="carousel-btn prev-btn" @click="goToQuote((currentQuoteIndex - 1 + quotes.length) % quotes.length)" aria-label="上一句">
+                <i class="chevron left icon"></i>
+              </button>
+              <button class="carousel-btn next-btn" @click="nextQuote" aria-label="下一句">
+                <i class="chevron right icon"></i>
+              </button>
             </div>
 
             <div class="ui buttons">
@@ -80,13 +170,13 @@ onMounted(() => {
           武林高手風采
         </h2>
 
-        <div class="ui two column stackable grid">
+        <div class="ui three column stackable grid">
           <div class="column">
             <div class="master-card">
               <div class="master-avatar">
                 <i class="leaf icon"></i>
               </div>
-              <h3 class="ui center aligned header" style="color: #1e40af;">思琴</h3>
+              <h3 class="ui center aligned header" style="color: #1e40af;">Friday</h3>
               <p style="color: #475569; line-height: 1.6;">
                 專精於生態觀察與自主學習哲學。透過對小塊土地的深度觀察，
                 探索區域生態到植物群落的奧秘，理解入侵種在期間的意義，
@@ -105,23 +195,58 @@ onMounted(() => {
 
           <div class="column">
             <div class="master-card">
-              <div class="master-avatar">
-                <i class="tree icon"></i>
+              <div class="master-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <i class="calculator icon"></i>
               </div>
-              <h3 class="ui center aligned header" style="color: #1e40af;">Friday</h3>
+              <h3 class="ui center aligned header" style="color: #1e40af;">bestian Tang</h3>
+              <p class="ui center aligned" style="color: #f5576c; font-weight: 600; margin-bottom: 0.5rem;">小巴老師</p>
               <p style="color: #475569; line-height: 1.6;">
-                野外可食植物辨識的專家，傳授安全採集原則與生態倫理觀念。
-                教導學習者如何在小塊土地上觀察植物群落與生態系統，
-                建立人與自然的和諧關係。
+                自由數學共同發起人。專精於數學教育與自主學習推廣，致力於打破傳統數學教學的框架。
+                相信教材不是萬能，但沒教材萬萬不能。強調概念理解重於大量練習，
+                讓學生能真正從教材中「學習」，而非只是做題目。
               </p>
               <div class="ui divider" style="background-color: #e2e8f0;"></div>
-              <h4 style="color: #3b82f6; margin-top: 1rem;">修煉心法：</h4>
+              <h4 style="color: #f5576c; margin-top: 1rem;">教學理念：</h4>
               <ul style="color: #64748b;">
-                <li>植物辨識的基礎</li>
-                <li>安全採集的原則</li>
-                <li>生態倫理的實踐</li>
-                <li>人與自然的和諧</li>
+                <li>概念理解優先於練習</li>
+                <li>教材應支持學習與複習</li>
+                <li>適合自學的完整說明</li>
+                <li>培養邏輯思維與抽象思考</li>
               </ul>
+              <div style="margin-top: 1rem;">
+                <RouterLink to="/freemath" class="ui button" style="background: #f5576c; color: white; width: 100%;">
+                  <i class="external icon"></i>
+                  了解更多
+                </RouterLink>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="master-card">
+              <div class="master-avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <i class="book icon"></i>
+              </div>
+              <h3 class="ui center aligned header" style="color: #1e40af;">朱佳仁</h3>
+              <p style="color: #475569; line-height: 1.6;">
+                自由數學共同發起人。專精於教材編創與教學設計，致力於開發適合自學的數學教材。
+                從「跟著教材思考」的理念出發，讓學生在解題過程中感受到陪伴感。
+                透過數學地圖連結不同單元，展現數學概念的相互關聯性。
+              </p>
+              <div class="ui divider" style="background-color: #e2e8f0;"></div>
+              <h4 style="color: #667eea; margin-top: 1rem;">教材特色：</h4>
+              <ul style="color: #64748b;">
+                <li>互動式填空練習設計</li>
+                <li>數學地圖連結概念</li>
+                <li>適合混齡自學課程</li>
+                <li>抽象思考的系統培養</li>
+              </ul>
+              <div style="margin-top: 1rem;">
+                <a href="https://math.alearn.org.tw/intro" target="_blank" class="ui button" style="background: #667eea; color: white; width: 100%;">
+                  <i class="external icon"></i>
+                  訪問數學平台
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -344,8 +469,8 @@ onMounted(() => {
               </div>
               <div class="extra content">
                 <div class="ui two buttons">
-                  <button class="ui basic button">查看詳情</button>
-                  <RouterLink to="/dashboard" class="ui primary button">開始修煉</RouterLink>
+                  <RouterLink to="/freemath" class="ui basic button">查看詳情</RouterLink>
+                  <RouterLink to="/freemath" class="ui primary button">開始學習</RouterLink>
                 </div>
               </div>
             </div>
@@ -549,16 +674,148 @@ onMounted(() => {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* 金句輪播容器 */
+.quote-carousel {
+  position: relative;
+  margin: 2rem 0;
+  min-height: 150px;
+}
+
+.quote-container {
+  position: relative;
+  min-height: 150px;
+}
+
 .wisdom-quote {
   font-size: 1.3rem; /* 從 1.1rem 增加到 1.3rem */
   font-style: italic;
   color: rgba(255, 255, 255, 0.95);
-  margin: 2rem 0;
   padding: 1.5rem;
-  border-left: 4px solid #fbbf24;
+  border-left: 4px solid;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 0 8px 8px 0;
   backdrop-filter: blur(10px);
+  position: relative;
+  transition: border-left-color 0.5s ease;
+}
+
+.quote-text {
+  line-height: 1.6;
+}
+
+.quote-author {
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* 輪播過渡動畫 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+/* 輪播指示器 */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  outline: none;
+}
+
+.indicator:hover {
+  transform: scale(1.2);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.indicator.active {
+  transform: scale(1.3);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* 輪播切換按鈕 */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.prev-btn {
+  left: -20px;
+}
+
+.next-btn {
+  right: -20px;
+}
+
+/* 手機版調整 */
+@media only screen and (max-width: 768px) {
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .prev-btn {
+    left: -10px;
+  }
+  
+  .next-btn {
+    right: -10px;
+  }
+  
+  .wisdom-quote {
+    font-size: 1.1rem;
+    padding: 1.2rem;
+  }
 }
 
 .master-section {
