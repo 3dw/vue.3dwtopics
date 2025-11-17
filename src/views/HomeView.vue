@@ -188,28 +188,6 @@ onUnmounted(() => {
         <div class="ui three column stackable grid">
           <div class="column">
             <div class="master-card">
-              <div class="master-avatar">
-                <i class="leaf icon"></i>
-              </div>
-              <h3 class="ui center aligned header" style="color: #1e40af;">Friday</h3>
-              <p style="color: #475569; line-height: 1.6;">
-                專精於生態觀察與自主學習哲學。透過對小塊土地的深度觀察，
-                探索區域生態到植物群落的奧秘，理解入侵種在期間的意義，
-                培養生態倫理與自我節律的平衡。
-              </p>
-              <div class="ui divider" style="background-color: #e2e8f0;"></div>
-              <h4 style="color: #3b82f6; margin-top: 1rem;">修煉心法：</h4>
-              <ul style="color: #64748b;">
-                <li>辨識與標註的藝術</li>
-                <li>採集前後的思考原則</li>
-                <li>萬物皆有靈的哲學</li>
-                <li>自我節律的修煉</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="master-card">
               <div class="master-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                 <i class="calculator icon"></i>
               </div>
@@ -234,6 +212,28 @@ onUnmounted(() => {
                   了解更多
                 </RouterLink>
               </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="master-card">
+              <div class="master-avatar">
+                <i class="leaf icon"></i>
+              </div>
+              <h3 class="ui center aligned header" style="color: #1e40af;">Friday</h3>
+              <p style="color: #475569; line-height: 1.6;">
+                專精於生態觀察與自主學習哲學。透過對小塊土地的深度觀察，
+                探索區域生態到植物群落的奧秘，理解入侵種在期間的意義，
+                培養生態倫理與自我節律的平衡。
+              </p>
+              <div class="ui divider" style="background-color: #e2e8f0;"></div>
+              <h4 style="color: #3b82f6; margin-top: 1rem;">修煉心法：</h4>
+              <ul style="color: #64748b;">
+                <li>辨識與標註的藝術</li>
+                <li>採集前後的思考原則</li>
+                <li>萬物皆有靈的哲學</li>
+                <li>自我節律的修煉</li>
+              </ul>
             </div>
           </div>
 
