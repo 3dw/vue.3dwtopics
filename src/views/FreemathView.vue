@@ -42,7 +42,7 @@ onMounted(() => {
               "數學不是計算，而是思考的方式<br>
               透過數學，我們可以理解世界的規律與美感"
               <div style="text-align: right; margin-top: 1rem; font-size: 0.9rem; color: #fbbf24;">
-                — bestian Tang（小巴老師）
+                — Bestian Tang（小巴老師）
               </div>
             </div>
 
@@ -66,7 +66,7 @@ onMounted(() => {
               style="width: 100%; height: 350px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
               <iframe width="100%" height="100%" 
                 src="https://www.youtube.com/embed/videoseries?list=PLrDesaqSWN8yY0WtUOvinmbxh5Pd3sL1U"
-                title="bestian Tang 小巴老師數學教學頻道" frameborder="0"
+                title="Bestian Tang 小巴老師數學教學頻道" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
               </iframe>
@@ -85,7 +85,7 @@ onMounted(() => {
       <div class="ui container">
         <h2 class="ui center aligned header" style="color: #1e293b; font-size: 2.5rem; margin-bottom: 3rem;">
           <i class="user circle icon" style="color: #f5576c;"></i>
-          關於 bestian Tang（小巴老師）
+          關於 Bestian Tang（小巴老師）
         </h2>
 
         <div class="ui two column stackable grid">
@@ -94,7 +94,7 @@ onMounted(() => {
               <div class="teacher-avatar">
                 <i class="user graduate icon"></i>
               </div>
-              <h3 class="ui center aligned header" style="color: #1e40af;">bestian Tang</h3>
+              <h3 class="ui center aligned header" style="color: #1e40af;">Bestian Tang</h3>
               <p class="ui center aligned" style="color: #f5576c; font-weight: 600; margin-bottom: 1rem;">小巴老師</p>
               <p style="color: #475569; line-height: 1.6;">
                 專精於數學教育與自主學習推廣。致力於打破傳統數學教學的框架，
@@ -359,7 +359,7 @@ onMounted(() => {
               透過數學，我們可以理解世界的規律與美感"
             </p>
             <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-top: 0.5rem;">
-              — bestian Tang（小巴老師）
+              — Bestian Tang（小巴老師）
             </p>
           </div>
         </div>

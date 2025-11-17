@@ -26,7 +26,7 @@ export default defineComponent({
     // 根據路由切換 layout
     watch(() => route.path, (newPath) => {
       if (newPath === '/dashboard' || newPath === '/courses'
-        || newPath === '/auth' || newPath === '/freemath'
+        || newPath === '/auth'
       ) {
         layout.value = 'dashboard'
       } else {

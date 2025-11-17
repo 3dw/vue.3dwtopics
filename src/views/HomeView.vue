@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router'
 const quotes = [
   {
     text: '"數學不是計算，而是思考的方式<br>透過數學，我們可以理解世界的規律與美感"',
-    author: 'bestian Tang（小巴老師）',
+    author: 'Bestian Tang（小巴老師）',
     color: '#f5576c'
   },
   {
@@ -21,7 +21,7 @@ const quotes = [
   }
 ] as const
 
-const currentQuoteIndex = ref(0) // 從 bestian Tang（小巴老師）開始
+const currentQuoteIndex = ref(0) // 從 Bestian Tang（小巴老師）開始
 let carouselInterval: number | null = null
 
 // 當前金句
@@ -198,7 +198,7 @@ onUnmounted(() => {
               <div class="master-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                 <i class="calculator icon"></i>
               </div>
-              <h3 class="ui center aligned header" style="color: #1e40af;">bestian Tang</h3>
+              <h3 class="ui center aligned header" style="color: #1e40af;">Bestian Tang</h3>
               <p class="ui center aligned" style="color: #f5576c; font-weight: 600; margin-bottom: 0.5rem;">小巴老師</p>
               <p style="color: #475569; line-height: 1.6;">
                 自由數學共同發起人。專精於數學教育與自主學習推廣，致力於打破傳統數學教學的框架。
