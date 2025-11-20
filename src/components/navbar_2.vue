@@ -48,6 +48,12 @@ defineExpose({
                 <div class="header">自由數學</div>
               </div>
             </RouterLink>
+            <RouterLink to="/ecologicalobservation" class="nav-item item" :class="{ active: route.path === '/ecologicalobservation' }">
+              <i class="leaf icon"></i>
+              <div class="content">
+                <div class="header">野地植物生態觀察</div>
+              </div>
+            </RouterLink>
             <RouterLink to="/auth" class="nav-item item" :class="{ active: route.path === '/auth' }">
               <i class="user circle icon"></i>
               <div class="content">

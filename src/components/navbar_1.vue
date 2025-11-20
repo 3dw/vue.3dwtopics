@@ -14,6 +14,10 @@ import { RouterLink } from 'vue-router'
         <i class="calculator icon"></i>
         自由數學
       </RouterLink>
+      <RouterLink to="/ecologicalobservation" class="item">
+        <i class="leaf icon"></i>
+        野地植物生態觀察
+      </RouterLink>
       <a href="#" class="item">關於我們</a>
       <div class="right menu">
         <RouterLink to="/dashboard" class="ui positive button item start-practice-btn">

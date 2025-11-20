@@ -42,6 +42,11 @@ const router = createRouter({
       name: 'freemath',
       component: () => import('../views/FreemathView.vue'),
     },
+    {
+      path: '/ecologicalobservation',
+      name: 'ecologicalobservation',
+      component: () => import('../views/EcologicalobservationView.vue'),
+    },
   ],
 })
 
